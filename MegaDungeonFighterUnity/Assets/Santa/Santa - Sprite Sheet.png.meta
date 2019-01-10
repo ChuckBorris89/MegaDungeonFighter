@@ -18,6 +18,20 @@ TextureImporter:
     21300026: Santa - Sprite Sheet_13
     21300028: Santa - Sprite Sheet_14
     21300030: Santa - Sprite Sheet_15
+    21300032: Santa - Sprite Sheet_16
+    21300034: Santa - Sprite Sheet_21
+    21300036: Santa - Sprite Sheet_17
+    21300038: Santa - Sprite Sheet_18
+    21300040: Santa - Sprite Sheet_19
+    21300042: Santa - Sprite Sheet_20
+    21300044: Santa - Sprite Sheet_22
+    21300046: Santa - Sprite Sheet_23
+    21300048: Santa - Sprite Sheet_24
+    21300050: Santa - Sprite Sheet_25
+    21300052: Santa - Sprite Sheet_26
+    21300054: Santa - Sprite Sheet_27
+    21300056: Santa - Sprite Sheet_28
+    21300058: Santa - Sprite Sheet_29
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -79,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -90,7 +104,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +115,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,7 +126,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -437,6 +451,286 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 22fb6c8c04f08684996b8710c7a95249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1562
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9ba3eec3b416e4ea7c87a7a1edd59e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1564
+        width: 32
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7145e6bcb0384064ca5ff4a5361b3746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1562
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a579d427dcbee04f8c724802240bbdf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1562
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13594ca7e48879a448061728a4b951b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1562
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31c65e6ebf2c154c92a09cff6ff7cb4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1562
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512eb95fa61606449b6fde331d1da8b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 1564
+        width: 32
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221126b8086f68e48b5c8c928b69e6c0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 1562
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b4ac5790e109e4ba3843c0f6f41b01
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1081
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01247cd92ef409342b53aacedbfbb2b1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 1081
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f194159d940b2498f2f42b14025a7c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 1081
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80aafb750ac0a324f82d8404eca44f34
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 1081
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a49c69c8e731046b68058b2742a085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1081
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35890b484e11c5b4588205f8a110eeaf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Santa - Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1081
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 369ddc7bff9f1c9469f65594319db88e
       vertices: []
       indices: 
       edges: []
