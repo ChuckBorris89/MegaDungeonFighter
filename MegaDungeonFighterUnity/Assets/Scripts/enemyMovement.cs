@@ -5,39 +5,51 @@ using UnityEngine;
 public class enemyMovement : MonoBehaviour
 {
 
-    private Transform target;
-    public float speed = 20f;
-
+    public float speed = 10f;
+    public Transform Player;
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        Player = GameObject.FindWithTag("Player").transform;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        Vector3 pos = transform.position;
 
-        if (pos.x-target.position.x < 5 && pos.x - target.position.x > -5)
+        Vector3 displacement = Player.position - transform.position;
+        displacement = displacement.normalized;
+
+        if (Vector2.Distance(Player.position, transform.position) < 1.5f)
         {
-            if (pos.y - target.position.y < 5 && pos.y - target.position.y > -5)
+
+            if (Vector2.Distance(Player.position, transform.position) > 0.4f)
             {
-                pos.y += speed * Time.deltaTime;
-                pos.y -= speed * Time.deltaTime;
-                pos.x += speed * Time.deltaTime;
-                pos.x -= speed * Time.deltaTime;
+                transform.position += (displacement * speed * Time.deltaTime);
 
             }
 
+            else
+            {
+                //do whatever the enemy has to do with the player
+            }
         }
-
-       
-
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+           // col.gameObject.SendMessage("ApplyDamage", 10);
+        }
+        if (col.gameObject.tag == "Environment")
+        {
+            //Vector3 displacement = transform.position;
+            //transform.position += (displacement * speed * Time.deltaTime);
+        }
 
+
+    }
 
 }
