@@ -14,10 +14,15 @@ public class SantaController : MonoBehaviour
     private bool speed = false;
     private bool isRunningLeft = false;
     private bool isFighting = false;
+    public int health = 100;
+    public Slider healthSlider;
+    private int hitCounter = 0;
+    
     
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        healthSlider.value = health;
     }
 
     // Update is called once per frame
@@ -70,7 +75,7 @@ public class SantaController : MonoBehaviour
 
         if (!isFighting)
         {
-            transform.Translate(new Vector3(x * 0.1f, y * 0.1f, 0));
+            transform.Translate(new Vector3(x * 0.05f, y * 0.05f, 0));
             animator.SetBool("speed", speed);
         }
         else
@@ -79,4 +84,56 @@ public class SantaController : MonoBehaviour
         }
 
     }
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        
+        if (col.gameObject.tag == "Enemy")
+        {
+            hitCounter++;
+            if (hitCounter == 20)
+            {
+                health -= 5;
+                if (health < 0)
+                {
+                    health = 0;
+                }
+
+                healthSlider.value = health;
+                CheckIfGameOver();
+                hitCounter = 0;
+            }
+            //col.gameObject.SendMessage("ApplyDamage", 10);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            health -= 5;
+            if (health < 0)
+            {
+                health = 0;
+            }
+            healthSlider.value = health;
+            CheckIfGameOver();
+            //col.gameObject.SendMessage("ApplyDamage", 10);
+        }
+        if (col.gameObject.tag == "Environment")
+        {
+            //Vector3 displacement = transform.position;
+            //transform.position += (displacement * speed * Time.deltaTime);
+        }
+    }
+
+    private void CheckIfGameOver()
+    {
+        //Check if food point total is less than or equal to zero.
+        if (health == 0)
+        {
+            animator.SetBool("die", true); 
+        }
+    }
+
 }

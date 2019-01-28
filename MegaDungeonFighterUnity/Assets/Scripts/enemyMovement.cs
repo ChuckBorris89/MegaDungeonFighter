@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemyMovement : MonoBehaviour
 {
 
-    public float speed = 10f;
+    public float speed = 1f;
     public Transform Player;
     public int health = 10;
     // Start is called before the first frame update
@@ -43,14 +43,25 @@ public class enemyMovement : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             health = health - 4;
+            speed = 0;
             //col.gameObject.SendMessage("ApplyDamage", 10);
             CheckIfGameOver();
         }
+        
         if (col.gameObject.tag == "Environment")
         {
             //Vector3 displacement = transform.position;
             //transform.position += (displacement * speed * Time.deltaTime);
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            speed = 1f;
+        }
+        
     }
 
     private void CheckIfGameOver()

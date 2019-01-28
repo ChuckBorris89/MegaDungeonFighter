@@ -11,7 +11,6 @@
           <e p="buttonManager.cs" t="Include" />
           <e p="enemyMovement.cs" t="Include" />
           <e p="SantaController.cs" t="Include" />
-          <e p="wasd_movment.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
           <e p="2D" t="Include">
