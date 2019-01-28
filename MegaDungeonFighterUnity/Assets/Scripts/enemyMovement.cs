@@ -7,6 +7,7 @@ public class enemyMovement : MonoBehaviour
 
     public float speed = 10f;
     public Transform Player;
+    public int health = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,15 +42,27 @@ public class enemyMovement : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-           // col.gameObject.SendMessage("ApplyDamage", 10);
+            health = health - 4;
+            //col.gameObject.SendMessage("ApplyDamage", 10);
+            CheckIfGameOver();
         }
         if (col.gameObject.tag == "Environment")
         {
             //Vector3 displacement = transform.position;
             //transform.position += (displacement * speed * Time.deltaTime);
         }
+    }
 
+    private void CheckIfGameOver()
+    {
+        //Check if food point total is less than or equal to zero.
+        if (health <= 0)
+        {
 
+            //Call the GameOver function of GameManager.
+            //GameManager.instance.GameOver();
+
+        }
     }
 
 }
