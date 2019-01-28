@@ -9,6 +9,7 @@ public class enemyMovement : MonoBehaviour
     public float speed = 1f;
     private GameObject Player;
     public int health = 10;
+    public float minDistance = 1.5f;
 
     private bool isUpGoing = false;
     public int maxSamples;
@@ -53,7 +54,7 @@ public class enemyMovement : MonoBehaviour
         Vector3 displacement = Player.transform.position - transform.position;
         displacement = displacement.normalized;
 
-        if (Vector2.Distance(Player.transform.position, transform.position) < 1.5f)
+        if (Vector2.Distance(Player.transform.position, transform.position) < minDistance)
         {
             if (Vector2.Distance(Player.transform.position, transform.position) > 0.1f)
             {
