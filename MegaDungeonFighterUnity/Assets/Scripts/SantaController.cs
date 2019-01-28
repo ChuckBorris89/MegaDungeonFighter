@@ -93,7 +93,7 @@ public class SantaController : MonoBehaviour
             hitCounter++;
             if (hitCounter == 20)
             {
-                health -= 5;
+                health -= 1;
                 if (health < 0)
                 {
                     health = 0;
@@ -111,7 +111,7 @@ public class SantaController : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            health -= 5;
+            health -= 1;
             if (health < 0)
             {
                 health = 0;
