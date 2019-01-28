@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class SantaController : MonoBehaviour
@@ -10,6 +12,8 @@ public class SantaController : MonoBehaviour
     
     private SpriteRenderer spriteRenderer;
     private bool speed = false;
+    private bool isRunningLeft = false;
+    private bool isFighting = false;
     
     void Start()
     {
@@ -21,6 +25,30 @@ public class SantaController : MonoBehaviour
     {
         var y = CrossPlatformInputManager.GetAxis("Vertical");
         var x = CrossPlatformInputManager.GetAxis("Horizontal");
+        
+        if (CrossPlatformInputManager.GetButtonDown("btn_hit"))
+        {
+            isFighting = true;
+            animator.SetBool("hit", true);
+        }
+        else if (CrossPlatformInputManager.GetButtonDown("btn_kick"))
+        {
+            isFighting = true;
+            animator.SetBool("kick", true);
+        }
+        else if (CrossPlatformInputManager.GetButtonUp("btn_hit"))
+        {
+            isFighting = false;
+            animator.SetBool("hit", false);
+        }
+        else if (CrossPlatformInputManager.GetButtonUp("btn_kick"))
+        {
+            isFighting = false;
+            animator.SetBool("kick", false);
+        }
+
+        
+        
         if (x != 0 || y != 0)
         {
             speed = true;
@@ -31,14 +59,24 @@ public class SantaController : MonoBehaviour
         }
 
         if (x < 0) {
-            spriteRenderer.flipX = true;
+            isRunningLeft = true;
+        }
+        else if (x > 0)
+        {
+            isRunningLeft = false;
+        }
+        
+        spriteRenderer.flipX = isRunningLeft;
+
+        if (!isFighting)
+        {
+            transform.Translate(new Vector3(x * 0.1f, y * 0.1f, 0));
+            animator.SetBool("speed", speed);
         }
         else
-        {
-            spriteRenderer.flipX = false;
+        { 
+            animator.SetBool("speed", false);
         }
 
-        transform.Translate(new Vector3(x*0.1f,y*0.1f,0));
-        animator.SetBool("speed", speed);
     }
 }
