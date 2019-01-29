@@ -126,6 +126,16 @@ public class SantaController : MonoBehaviour
             healthSlider.value = health;
             CheckIfGameOver();
         }
+        if (col.gameObject.CompareTag("EndBoss"))
+        {
+            health -= 3;
+            if (health < 0)
+            {
+                health = 0;
+            }
+            healthSlider.value = health;
+            CheckIfGameOver();
+        }
         else if (col.gameObject.CompareTag("HealthDrink"))
         {
             health += 20;

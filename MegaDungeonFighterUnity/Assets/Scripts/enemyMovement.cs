@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -27,6 +28,7 @@ public class enemyMovement : MonoBehaviour
     private bool isKicking = false;
     private int hitSample = 0;
     private int kickSample = 0;
+    private int rndSound;
     
     // Start is called before the first frame update
     void Start()
@@ -116,6 +118,7 @@ public class enemyMovement : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
+            santaController.GainExperience(10);
         }
     }
 
@@ -134,14 +137,38 @@ public class enemyMovement : MonoBehaviour
         {
             if (Player.transform.position.x < transform.position.x && playerSR.flipX == false)
             {
+                rndSound = Random.Range(1, 3);
+                switch (rndSound)
+                {
+                    case 1:
+                        punch1.Play();
+                        break;
+                    case 2:
+                        punch2.Play();
+                        break;
+                    case 3:
+                        punch3.Play();
+                        break;
+                }
                 health -= Mathf.RoundToInt(santaController.GetStrength()*0.2f);
-                santaController.GainExperience(3);
                 checkIfGameOver();
             }
             else if (Player.transform.position.x > transform.position.x && playerSR.flipX)
             {
+                rndSound = Random.Range(1, 3);
+                switch (rndSound)
+                {
+                    case 1:
+                        punch1.Play();
+                        break;
+                    case 2:
+                        punch2.Play();
+                        break;
+                    case 3:
+                        punch3.Play();
+                        break;
+                }
                 health -= Mathf.RoundToInt(santaController.GetStrength()*0.2f);
-                santaController.GainExperience(3);
                 checkIfGameOver();
             }
 
@@ -152,14 +179,38 @@ public class enemyMovement : MonoBehaviour
         {
             if (Player.transform.position.x < transform.position.x && playerSR.flipX == false)
             {
+                rndSound = Random.Range(1, 3);
+                switch (rndSound)
+                {
+                    case 1:
+                        punch1.Play();
+                        break;
+                    case 2:
+                        punch2.Play();
+                        break;
+                    case 3:
+                        punch3.Play();
+                        break;
+                }
                 health -= Mathf.RoundToInt(santaController.GetStrength()*0.5f);
-                santaController.GainExperience(10);
                 checkIfGameOver();
             }
             else if (Player.transform.position.x > transform.position.x && playerSR.flipX)
             {
+                rndSound = Random.Range(1, 3);
+                switch (rndSound)
+                {
+                    case 1:
+                        punch1.Play();
+                        break;
+                    case 2:
+                        punch2.Play();
+                        break;
+                    case 3:
+                        punch3.Play();
+                        break;
+                }
                 health -= Mathf.RoundToInt(santaController.GetStrength()*0.5f);
-                santaController.GainExperience(10);
                 checkIfGameOver();
             }
 
