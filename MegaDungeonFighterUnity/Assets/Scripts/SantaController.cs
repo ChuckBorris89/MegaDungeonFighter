@@ -19,6 +19,7 @@ public class SantaController : MonoBehaviour
     public GameObject healthLvlText;
     public GameObject strengthLvlText;
     public GameObject speedLvlText;
+    public GameObject deathPanel;
     
     private SpriteRenderer spriteRenderer;
     private bool doesSpeed = false;
@@ -34,6 +35,7 @@ public class SantaController : MonoBehaviour
     private int healthLvl = 1;
     private int strengthLvl = 1;
     private int speedLvl = 1;
+    private bool isDead = false;
     
     void Start()
     {
@@ -158,10 +160,13 @@ public class SantaController : MonoBehaviour
 
     private void CheckIfGameOver()
     {
-        if (health == 0)
+        if (health == 0 && !isDead)
         {
             animator.SetBool("die", true);
             death.Play();
+            isDead = true;
+            Invoke("DidDie", 2);
+
         }
     }
 
@@ -185,7 +190,7 @@ public class SantaController : MonoBehaviour
         xpSlider.value = experience;
         upgradePanel.SetActive(true);
         var cgm = gameManager.GetComponent<CustomGameManager>();
-        cgm.OnPauseClicked();
+        cgm.OnPause();
         var strengthTxt = strengthLvlText.GetComponent<Text>();
         strengthTxt.text = "LV " + strengthLvl;
         var healthTxt = healthLvlText.GetComponent<Text>();
@@ -222,4 +227,13 @@ public class SantaController : MonoBehaviour
     {
         return strength;
     }
+
+    private void DidDie()
+    {
+        deathPanel.SetActive(true);
+        var cgm = gameManager.GetComponent<CustomGameManager>();
+        cgm.OnPause();
+        
+    }
+    
 }

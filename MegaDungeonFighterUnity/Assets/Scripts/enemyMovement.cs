@@ -13,6 +13,7 @@ public class enemyMovement : MonoBehaviour
     public int maxSamples;
     public float rndMove = 0;
     public bool isEndboss = false;
+    public GameObject gameManager;
 
     public AudioSource punch1;
     public AudioSource punch2;
@@ -117,8 +118,14 @@ public class enemyMovement : MonoBehaviour
         //Check if food point total is less than or equal to zero.
         if (health <= 0)
         {
+            if (this.gameObject.CompareTag("EndBoss"))
+            {
+                var gm = gameManager.GetComponent<CustomGameManager>();
+                gm.WonGame();
+            }
             Destroy(this.gameObject);
             santaController.GainExperience(10);
+            
         }
     }
 
@@ -133,7 +140,7 @@ public class enemyMovement : MonoBehaviour
         {
             kickSample++;
         }
-        if (isHitting && hitSample == 20)
+        if (isHitting && hitSample == 15)
         {
             if (Player.transform.position.x < transform.position.x && playerSR.flipX == false)
             {
@@ -175,7 +182,7 @@ public class enemyMovement : MonoBehaviour
             hitSample = 0;
         }
 
-        if (isKicking && kickSample == 40)
+        if (isKicking && kickSample == 30)
         {
             if (Player.transform.position.x < transform.position.x && playerSR.flipX == false)
             {
@@ -216,13 +223,7 @@ public class enemyMovement : MonoBehaviour
 
             kickSample = 0;
         }
-
         
-    }
-
-    public void OnPauseClicked()
-    {
-        Time.timeScale = 0;
     }
     
 }

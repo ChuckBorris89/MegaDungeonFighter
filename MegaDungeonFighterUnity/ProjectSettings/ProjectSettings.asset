@@ -677,10 +677,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 2
-  cloudProjectId: ffc3d393-8f0e-4dda-9c3d-9f5a6362b703
+  cloudProjectId: 0fe597e8-30ce-4038-b4a7-efad83dca8ef
   framebufferDepthMemorylessMode: 0
-  projectName: MegaDungeonFighterUnity
-  organizationId: unity_ngqg4x3rhww9cg
+  projectName: MegaDungeonFighterUnity (1)
+  organizationId: jakobsp
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

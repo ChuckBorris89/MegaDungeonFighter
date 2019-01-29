@@ -13,6 +13,7 @@
           <e p="enemyMovement.cs" t="Include" />
           <e p="HealthDrinkManager.cs" t="Include" />
           <e p="SantaController.cs" t="Include" />
+          <e p="StartGUIManager.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
           <e p="2D" t="Include">
