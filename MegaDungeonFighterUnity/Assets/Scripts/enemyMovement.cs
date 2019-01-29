@@ -13,6 +13,10 @@ public class enemyMovement : MonoBehaviour
     public float rndMove = 0;
     public bool isEndboss = false;
 
+    public AudioSource punch1;
+    public AudioSource punch2;
+    public AudioSource punch3;
+
     private GameObject Player;
     private SantaController santaController;
     private bool isUpGoing = false;

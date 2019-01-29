@@ -12,10 +12,7 @@ public class SantaController : MonoBehaviour
     public Animator animator;
     public Slider healthSlider;
     public Slider xpSlider;
-    public AudioSource punch1;
-    public AudioSource punch2;
     public AudioSource death;
-    public AudioSource punch3;
     public AudioSource getHealth;
     
     private SpriteRenderer spriteRenderer;
@@ -145,7 +142,8 @@ public class SantaController : MonoBehaviour
     {
         if (health == 0)
         {
-            animator.SetBool("die", true); 
+            animator.SetBool("die", true);
+            death.Play();
         }
     }
 
