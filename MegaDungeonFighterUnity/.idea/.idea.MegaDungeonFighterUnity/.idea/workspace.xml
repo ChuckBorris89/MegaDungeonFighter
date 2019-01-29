@@ -13,8 +13,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/SantaController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2145">
-              <caret line="168" column="36" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
+            <state relative-caret-position="-2370">
+              <caret line="16" column="26" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="26" />
               <folding>
                 <marker date="1548758098306" expanded="false" signature="6:194" ph="..." />
                 <marker date="1548758098306" expanded="true" signature="240:4193" ph="{...}" />
@@ -56,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+            <state relative-caret-position="270">
+              <caret line="160" selection-start-line="160" selection-end-line="160" />
               <folding>
                 <marker date="1548758211788" expanded="false" signature="6:124" ph="..." />
                 <marker date="1548758211788" expanded="true" signature="168:4782" ph="{...}" />
@@ -207,8 +207,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthDrinkManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SantaController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SantaController.cs" />
       </list>
     </option>
   </component>
@@ -333,6 +333,58 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs</url>
+          <line>138</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs" initialLine="138">
+            <startOffsets>
+              <option value="3889" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3952" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs</url>
+          <line>132</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs" initialLine="132">
+            <startOffsets>
+              <option value="3604" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3667" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs</url>
+          <line>151</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs" initialLine="151">
+            <startOffsets>
+              <option value="4350" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4385" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs</url>
+          <line>156</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs" initialLine="156">
+            <startOffsets>
+              <option value="4556" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4619" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -433,8 +485,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/SantaController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2145">
-          <caret line="168" column="36" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
+        <state relative-caret-position="-2370">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="26" />
           <folding>
             <marker date="1548758098306" expanded="false" signature="6:194" ph="..." />
             <marker date="1548758098306" expanded="true" signature="240:4193" ph="{...}" />
@@ -474,8 +526,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/enemyMovement.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="270">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
           <folding>
             <marker date="1548758211788" expanded="false" signature="6:124" ph="..." />
             <marker date="1548758211788" expanded="true" signature="168:4782" ph="{...}" />

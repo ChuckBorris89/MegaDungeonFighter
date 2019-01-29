@@ -83,11 +83,11 @@ public class SantaController : MonoBehaviour
         if (!isFighting)
         {
             transform.Translate(new Vector3(x * 0.05f * speed, y * 0.05f * speed, 0));
-            animator.SetBool("doesSpeed", doesSpeed);
+            animator.SetBool("speed", doesSpeed);
         }
         else
         { 
-            animator.SetBool("doesSpeed", false);
+            animator.SetBool("speed", false);
         }
 
     }
