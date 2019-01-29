@@ -219,5 +219,10 @@ public class enemyMovement : MonoBehaviour
 
         
     }
+
+    public void OnPauseClicked()
+    {
+        Time.timeScale = 0;
+    }
     
 }

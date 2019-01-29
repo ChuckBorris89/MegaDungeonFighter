@@ -14,6 +14,11 @@ public class SantaController : MonoBehaviour
     public Slider xpSlider;
     public AudioSource death;
     public AudioSource getHealth;
+    public GameObject gameManager;
+    public GameObject upgradePanel;
+    public GameObject healthLvlText;
+    public GameObject strengthLvlText;
+    public GameObject speedLvlText;
     
     private SpriteRenderer spriteRenderer;
     private bool doesSpeed = false;
@@ -26,6 +31,9 @@ public class SantaController : MonoBehaviour
     private int level = 0;
     private int strength = 10;
     private float speed = 1.0f;
+    private int healthLvl = 1;
+    private int strengthLvl = 1;
+    private int speedLvl = 1;
     
     void Start()
     {
@@ -175,22 +183,39 @@ public class SantaController : MonoBehaviour
     {
         experience = 0;
         xpSlider.value = experience;
+        upgradePanel.SetActive(true);
+        var cgm = gameManager.GetComponent<CustomGameManager>();
+        cgm.OnPauseClicked();
+        var strengthTxt = strengthLvlText.GetComponent<Text>();
+        strengthTxt.text = "LV " + strengthLvl;
+        var healthTxt = healthLvlText.GetComponent<Text>();
+        healthTxt.text = "LV " + healthLvl;
+        var speedTxt = speedLvlText.GetComponent<Text>();
+        speedTxt.text = "LV " + speedLvl;
+        health = healthMax;
+        healthSlider.value = health;
+
     }
 
     public void UpgradeMaxHealth()
     {
         healthMax += 20;
         healthSlider.maxValue += 20;
+        healthLvl++;
+        health = healthMax;
+        healthSlider.value = health;
     }
 
     public void UpgradeStrength()
     {
         strength += 2;
+        strengthLvl++;
     }
 
     public void UpgradeSpeed()
     {
         speed += 0.2f;
+        speedLvl++;
     }
 
     public int GetStrength()
