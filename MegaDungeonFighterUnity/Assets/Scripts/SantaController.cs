@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -9,20 +10,26 @@ public class SantaController : MonoBehaviour
 {
 
     public Animator animator;
+    public Slider healthSlider;
+    public Slider xpSlider;
     
     private SpriteRenderer spriteRenderer;
-    private bool speed = false;
+    private bool doesSpeed = false;
     private bool isRunningLeft = false;
     private bool isFighting = false;
-    public int health = 100;
-    public Slider healthSlider;
+    private int health = 100;
+    private int healthMax = 100;
     private int hitCounter = 0;
-    
+    private int experience = 0;
+    private int level = 0;
+    private int strength = 10;
+    private float speed = 1.0f;
     
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         healthSlider.value = health;
+        xpSlider.value = experience;
     }
 
     // Update is called once per frame
@@ -56,11 +63,11 @@ public class SantaController : MonoBehaviour
         
         if (x != 0 || y != 0)
         {
-            speed = true;
+            doesSpeed = true;
         }
         else
         {
-            speed = false;
+            doesSpeed = false;
         }
 
         if (x < 0) {
@@ -75,20 +82,19 @@ public class SantaController : MonoBehaviour
 
         if (!isFighting)
         {
-            transform.Translate(new Vector3(x * 0.05f, y * 0.05f, 0));
-            animator.SetBool("speed", speed);
+            transform.Translate(new Vector3(x * 0.05f * speed, y * 0.05f * speed, 0));
+            animator.SetBool("doesSpeed", doesSpeed);
         }
         else
         { 
-            animator.SetBool("speed", false);
+            animator.SetBool("doesSpeed", false);
         }
 
     }
 
     void OnCollisionStay2D(Collision2D col)
     {
-        
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.CompareTag("Enemy"))
         {
             hitCounter++;
             if (hitCounter == 20)
@@ -103,37 +109,78 @@ public class SantaController : MonoBehaviour
                 CheckIfGameOver();
                 hitCounter = 0;
             }
-            //col.gameObject.SendMessage("ApplyDamage", 10);
         }
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.CompareTag("Enemy"))
         {
-            health -= 1;
+            health -= 3;
             if (health < 0)
             {
                 health = 0;
             }
             healthSlider.value = health;
             CheckIfGameOver();
-            //col.gameObject.SendMessage("ApplyDamage", 10);
         }
-        if (col.gameObject.tag == "Environment")
+        else if (col.gameObject.CompareTag("HealthDrink"))
         {
-            //Vector3 displacement = transform.position;
-            //transform.position += (displacement * speed * Time.deltaTime);
+            health += 20;
+            if (health > healthMax)
+            {
+                health = healthMax;
+            }
+            healthSlider.value = health;
         }
     }
 
     private void CheckIfGameOver()
     {
-        //Check if food point total is less than or equal to zero.
         if (health == 0)
         {
             animator.SetBool("die", true); 
         }
     }
 
+    public void GainExperience(int xp)
+    {
+        experience += xp;
+        CheckIfLevelUp();
+        xpSlider.value = experience;
+    }
+
+    private void CheckIfLevelUp()
+    {
+        if (experience < 100) return;
+        level++;
+        LevelUp();
+    }
+
+    private void LevelUp()
+    {
+        experience = 0;
+        xpSlider.value = experience;
+    }
+
+    public void UpgradeMaxHealth()
+    {
+        healthMax += 20;
+        healthSlider.maxValue += 20;
+    }
+
+    public void UpgradeStrength()
+    {
+        strength += 2;
+    }
+
+    public void UpgradeSpeed()
+    {
+        speed += 0.2f;
+    }
+
+    public int GetStrength()
+    {
+        return strength;
+    }
 }

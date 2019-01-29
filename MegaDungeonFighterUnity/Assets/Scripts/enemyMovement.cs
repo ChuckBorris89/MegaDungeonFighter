@@ -7,14 +7,16 @@ public class enemyMovement : MonoBehaviour
 {
 
     public float speed = 1f;
-    private GameObject Player;
     public int health = 10;
     public float minDistance = 1.5f;
-
-    private bool isUpGoing = false;
     public int maxSamples;
-    private int sample = 0;
     public float rndMove = 0;
+    public bool isEndboss = false;
+
+    private GameObject Player;
+    private SantaController santaController;
+    private bool isUpGoing = false;
+    private int sample = 0;
     private SpriteRenderer playerSR;
     private SpriteRenderer spriteRenderer;
     private bool isHitting = false;
@@ -28,6 +30,7 @@ public class enemyMovement : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         playerSR = Player.GetComponent<SpriteRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        santaController = Player.GetComponent<SantaController>();
     }
 
 
@@ -61,11 +64,11 @@ public class enemyMovement : MonoBehaviour
                 transform.position += (displacement * speed * Time.deltaTime);
                 if (displacement.x < 0)
                 {
-                    spriteRenderer.flipX = false;
+                    spriteRenderer.flipX = isEndboss;
                 }
                 else if (displacement.x > 0)
                 {
-                    spriteRenderer.flipX = true;
+                    spriteRenderer.flipX = !isEndboss;
                 }
             }
 
@@ -127,28 +130,32 @@ public class enemyMovement : MonoBehaviour
         {
             if (Player.transform.position.x < transform.position.x && playerSR.flipX == false)
             {
-                health -= 3;
+                health -= Mathf.RoundToInt(santaController.GetStrength()*0.2f);
+                santaController.GainExperience(3);
                 checkIfGameOver();
             }
             else if (Player.transform.position.x > transform.position.x && playerSR.flipX)
             {
-                health -= 3;
+                health -= Mathf.RoundToInt(santaController.GetStrength()*0.2f);
+                santaController.GainExperience(3);
                 checkIfGameOver();
             }
 
             hitSample = 0;
         }
 
-        if (isKicking && kickSample == 50)
+        if (isKicking && kickSample == 40)
         {
             if (Player.transform.position.x < transform.position.x && playerSR.flipX == false)
             {
-                health -= 10;
+                health -= Mathf.RoundToInt(santaController.GetStrength()*0.5f);
+                santaController.GainExperience(10);
                 checkIfGameOver();
             }
             else if (Player.transform.position.x > transform.position.x && playerSR.flipX)
             {
-                health -= 10;
+                health -= Mathf.RoundToInt(santaController.GetStrength()*0.5f);
+                santaController.GainExperience(10);
                 checkIfGameOver();
             }
 
